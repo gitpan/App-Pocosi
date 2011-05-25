@@ -17,7 +17,7 @@ DESCRIPTION
         POE::Component::Server::IRC
 
     *   Has an interactive mode where you can issue issue commands and call
-        methods on the IRC component(s).
+        methods on the IRCd component.
 
 CONFIGURATION
      class:    POE::Component::Server::IRC
@@ -143,7 +143,7 @@ OUTPUT
      ^C2011-05-22 15:30:18 Exiting due to SIGINT
      2011-05-22 15:30:18 Deleted plugin OperServ_1
      2011-05-22 15:30:18 Deleted plugin PocosiStatus_1
-     2011-05-22 15:30:18 IRC component shut down
+     2011-05-22 15:30:18 IRCd component shut down
 
 AUTHOR
     Hinrik Örn Sigurðsson, hinrik.sig@gmail.com

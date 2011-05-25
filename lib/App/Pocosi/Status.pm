@@ -3,7 +3,7 @@ BEGIN {
   $App::Pocosi::Status::AUTHORITY = 'cpan:HINRIK';
 }
 BEGIN {
-  $App::Pocosi::Status::VERSION = '0.01';
+  $App::Pocosi::Status::VERSION = '0.02';
 }
 
 use strict;
