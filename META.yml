@@ -36,8 +36,8 @@ requires:
   perl: 5.008
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=App-Pocosi
-  homepage: http://search.cpan.org/dist/App-Pocosi/
+  homepage: http://metacpan.org/release/App-Pocosi
   license: http://dev.perl.org/licenses/
   repository: git://github.com/hinrik/app-pocosi.git
-version: 0.02
+version: 0.03
 x_authority: cpan:HINRIK

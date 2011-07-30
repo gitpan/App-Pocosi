@@ -3,7 +3,7 @@ BEGIN {
   $App::Pocosi::AUTHORITY = 'cpan:HINRIK';
 }
 BEGIN {
-  $App::Pocosi::VERSION = '0.02';
+  $App::Pocosi::VERSION = '0.03';
 }
 
 use strict;
@@ -216,6 +216,8 @@ sub _construct_plugins {
     for my $plug_spec (@$plug_specs) {
         my ($class, $args, $canonclass) = @$plug_spec;
         my $obj = $canonclass->new(%$args);
+        my $isa = eval { $obj->isa($canonclass) };
+        die "isa() test failed for plugin of class $canonclass\n" if !$isa;
         push @plugins, [$class, $obj];
     }
 
@@ -247,12 +249,16 @@ sub _spawn_ircd {
     my ($self) = @_;
 
     my $class = $self->{cfg}{class};
-    return $class->spawn(
+    my $ircd = $class->spawn(
         plugin_debug => 1,
         config       => $self->{cfg}{config},
         ($self->{cfg}{flood} ? (antiflood => 0) : ()),
         (defined $self->{cfg}{auth} ? (auth => $self->{cfg}{auth}) : ()),
     );
+    my $isa = eval { $ircd->isa($class) };
+    die "isa() test failed for component of class $class\n" if !$isa;
+
+    return $ircd;
 }
 
 sub _load_either_class {

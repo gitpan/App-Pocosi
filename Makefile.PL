@@ -39,7 +39,7 @@ my %WriteMakefileArgs = (
     'Term::ReadKey' => '2.21',
     'YAML::XS' => '0'
   },
-  'VERSION' => '0.02',
+  'VERSION' => '0.03',
   'test' => {
     'TESTS' => 't/*.t'
   }
